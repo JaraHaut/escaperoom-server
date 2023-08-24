@@ -1,9 +1,12 @@
+const express = require("express");
 const router = require("express").Router();
 const controller = require("../controllers/controller");
 const knex = require("knex")(require("../knexfile"));
 
-router.route("/").get(controller.getAll).post(controller.add);
+router.route("/").get(controller.getAllProperties);
 
-router.route("/posts").get(controller.getAllPosts);
+router.route("/:propertyId").get(controller.getOneProperty);
+
+router.route("/add").post(controller.addNewProperty);
 
 module.exports = router;

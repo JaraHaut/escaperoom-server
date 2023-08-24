@@ -9,7 +9,7 @@ module.exports = [
     reception: true,
     pets: false,
     outdoor: false,
-    price: 1900,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ module.exports = [
     reception: true,
     pets: true,
     outdoor: true,
-    price: 1300,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ module.exports = [
     reception: true,
     pets: false,
     outdoor: true,
-    price: 2200,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ module.exports = [
     reception: true,
     pets: true,
     outdoor: true,
-    price: 2800,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ module.exports = [
     reception: true,
     pets: false,
     outdoor: true,
-    price: 3500,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 6,
@@ -69,7 +69,7 @@ module.exports = [
     reception: false,
     pets: true,
     outdoor: false,
-    price: 1200,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 7,
@@ -81,7 +81,7 @@ module.exports = [
     reception: true,
     pets: true,
     outdoor: true,
-    price: 1600,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 8,
@@ -93,7 +93,7 @@ module.exports = [
     reception: true,
     pets: false,
     outdoor: false,
-    price: 1400,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 9,
@@ -105,7 +105,7 @@ module.exports = [
     reception: true,
     pets: true,
     outdoor: true,
-    price: 2500,
+    picture: "https://picsum.photos/200",
   },
   {
     id: 10,
@@ -117,6 +117,6 @@ module.exports = [
     reception: true,
     pets: false,
     outdoor: true,
-    price: 1100,
+    picture: "https://picsum.photos/200",
   },
 ];

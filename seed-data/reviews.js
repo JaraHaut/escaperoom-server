@@ -2,6 +2,7 @@ module.exports = [
   {
     id: 1,
     condition: 4,
+    property_id: 1,
     confort: 3,
     safety: 5,
     management: 1,
@@ -14,6 +15,7 @@ module.exports = [
   {
     id: 2,
     condition: 4,
+    property_id: 2,
     confort: 5,
     safety: 4,
     management: 5,
@@ -26,6 +28,7 @@ module.exports = [
   {
     id: 3,
     condition: 1,
+    property_id: 3,
     confort: 1,
     safety: 3,
     management: 1,
@@ -38,6 +41,7 @@ module.exports = [
   {
     id: 4,
     condition: 4,
+    property_id: 4,
     confort: 4,
     safety: 4,
     management: 4,
@@ -50,6 +54,7 @@ module.exports = [
   {
     id: 5,
     condition: 4,
+    property_id: 5,
     confort: 3,
     safety: 2,
     management: 5,
@@ -62,6 +67,7 @@ module.exports = [
   {
     id: 6,
     condition: 5,
+    property_id: 6,
     confort: 5,
     safety: 4,
     management: 5,
@@ -74,6 +80,7 @@ module.exports = [
   {
     id: 7,
     condition: 3,
+    property_id: 7,
     confort: 2,
     safety: 3,
     management: 3,
@@ -86,6 +93,7 @@ module.exports = [
   {
     id: 8,
     condition: 3,
+    property_id: 8,
     confort: 2,
     safety: 4,
     management: 3,
@@ -99,6 +107,7 @@ module.exports = [
   {
     id: 9,
     condition: 3,
+    property_id: 9,
     confort: 2,
     safety: 4,
     management: 3,
@@ -111,6 +120,7 @@ module.exports = [
   {
     id: 10,
     condition: 3,
+    property_id: 10,
     confort: 4,
     safety: 4,
     management: 3,

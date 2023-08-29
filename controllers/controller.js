@@ -61,6 +61,23 @@ exports.addNewProperty = async (req, res) => {
   }
 };
 
+//get all reviews for one property
+exports.getAllReviews = async (req, res) => {
+  try {
+    const propertyId = req.params.propertyId;
+    const reviews = await knex("review")
+      .where({ property_id: propertyId })
+      .select("*");
+    res.json(reviews);
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        message: `Unable to fetch reviews for property with ID ${propertyId}`,
+      });
+  }
+};
+
 //post a new review
 exports.addNewReview = async (req, res) => {
   console.log(req.body);

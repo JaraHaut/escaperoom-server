@@ -36,7 +36,7 @@ exports.up = function (knex) {
       .unsigned()
       .checkIn([1, 2, 3, 4, 5]);
     table.text("comments");
-    table.decimal("rating", 2, 2);
+    table.decimal("rating", 3, 2);
     table.integer("price").notNullable().unsigned();
     table.integer("date");
     table.string("picture");

@@ -29,34 +29,39 @@ exports.getOneProperty = async (req, res) => {
 
 //post a new property:
 exports.addNewProperty = async (req, res) => {
-  console.log(req.body);
+  //console.log("object before validation");
+  //console.log(req.body);
   if (
     !req.body.title ||
     !req.body.postcode ||
     !req.body.address ||
     !req.body.agency ||
     !req.body.bedrooms ||
-    !req.body.reception ||
-    !req.body.pets ||
-    !req.body.outdoor ||
+    // !req.body.reception ||
+    // !req.body.pets ||
+    // !req.body.outdoor ||
     !req.body.picture
   ) {
-    return res.status(400).send("Please fill in all the required infomation");
+    return res.status(400).send("Please fill in all the required information");
   }
-  console.log(req.body);
+  // console.log("object after validation and before the await");
+  //console.log(req.body);
   try {
-    console.log(req.body);
+    //console.log(req.body);
     const newProperty = await knex("property").insert(req.body);
-    console.log(newProperty);
+    //console.log(newProperty);
     const createdProperty = await knex("property")
       .where({ id: newProperty[0] })
       .first();
-    console.log(createdProperty);
+    //console.log(createdProperty);
+    //console.log("object after await");
     res.status(201).json(createdProperty);
   } catch (error) {
+    console.log(error);
     console.error("Error adding property", error);
     res.status(500).json({
       message: `Unable to add property data to database`,
+      error,
     });
   }
 };
@@ -70,11 +75,9 @@ exports.getAllReviews = async (req, res) => {
       .select("*");
     res.json(reviews);
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: `Unable to fetch reviews for property with ID ${propertyId}`,
-      });
+    res.status(500).json({
+      message: `Unable to fetch reviews for property with ID ${propertyId}`,
+    });
   }
 };
 
@@ -97,7 +100,7 @@ exports.addNewReview = async (req, res) => {
   } catch (error) {
     console.error("Error adding review", error);
     res.status(500).json({
-      message: `Unable to add review to database`,
+      message: `Unable to add review to database ${error.message}`,
     });
   }
 };

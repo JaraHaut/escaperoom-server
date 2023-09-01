@@ -26,11 +26,10 @@ exports.getOneProperty = async (req, res) => {
     });
   }
 };
-
 //post a new property:
 exports.addNewProperty = async (req, res) => {
-  //console.log("object before validation");
-  //console.log(req.body);
+  console.log("object before validation");
+  console.log(req.body);
   if (
     !req.body.title ||
     !req.body.postcode ||
@@ -44,8 +43,8 @@ exports.addNewProperty = async (req, res) => {
   ) {
     return res.status(400).send("Please fill in all the required information");
   }
-  // console.log("object after validation and before the await");
-  //console.log(req.body);
+  console.log("object after validation and before the await");
+  console.log(req.body);
   try {
     //console.log(req.body);
     const newProperty = await knex("property").insert(req.body);
@@ -105,7 +104,31 @@ exports.addNewReview = async (req, res) => {
   }
 };
 
-// exports.getAllAgents = async (req, res) => {
-//   const agents = await knex("property"); //do i need a separate table for agencies???
-//   res.json(properties);
-// };
+//get all the agencies in the database
+exports.getAllAgencies = async (req, res) => {
+  try {
+    const agencies = await knex.distinct().from("property").pluck("agency");
+    console.log("all agencies", agencies);
+
+    res.json(agencies);
+  } catch (error) {
+    console.error("Error fetching agencies:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+//get all properties for one agency
+exports.getAllPropertiesByAgency = async (req, res) => {
+  console.log(req.body);
+  try {
+    //const { agency } = req.params;
+    const agency = req.params.agency;
+    console.log(req.params);
+    const propertiesFiltered = await knex("property").where({ agency: agency });
+    console.log("get all properties for one agency", propertiesFiltered);
+    res.json(propertiesFiltered);
+  } catch (error) {
+    console.error("Error fetching properties by agency:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};

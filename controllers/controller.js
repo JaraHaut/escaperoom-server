@@ -35,9 +35,6 @@ exports.addNewProperty = async (req, res) => {
     !req.body.address ||
     !req.body.agency ||
     !req.body.bedrooms ||
-    !req.body.reception ||
-    !req.body.pets ||
-    !req.body.outdoor ||
     !req.body.picture
   ) {
     return res.status(400).send("Please fill in all the required information");

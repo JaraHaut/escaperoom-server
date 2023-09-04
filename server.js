@@ -7,7 +7,7 @@ const reviewRoutes = require("./routes/reviewRoutes");
 const agencyRoutes = require("./routes/agencyRoutes");
 const cors = require("cors");
 
-app.use(express.json()); //this has to be at the top!!!
+app.use(express.json());
 
 app.use(cors());
 
